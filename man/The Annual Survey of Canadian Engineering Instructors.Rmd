@@ -1,7 +1,7 @@
 ---
 output: html_document
 ---
-```{r, echo=FALSE,message=FALSE}
+```{r, echo=FALSE, message=FALSE}
 source("/Users/Jake/ownCloud/R/Projects/R-SCEI/R/CEEA 2015 Analysis.R")
 ```
 
@@ -174,8 +174,21 @@ The steering committee expects that following the presentation of this paper, th
 
 The analysis presented in this paper is just a brief overview presenting summary statistics on the data collected from the 8 completed institutions.  
 
+###Basic statistics
+
+```{r}
+
+```
 
 
+
+```{r, echo=FALSE}
+survey_data$collector %>% 
+  table %>% 
+  as.data.frame %>%
+  set_names(c("Institution","Responses")) %>% 
+  pander
+```
 
 
 
