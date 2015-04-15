@@ -1,4 +1,11 @@
-#The Canadian Engineering Education Association Research Collaboration (CEEA-RC) National Survey
+---
+output: html_document
+---
+```{r, echo=FALSE,message=FALSE}
+source("/Users/Jake/ownCloud/R/Projects/R-SCEI/R/CEEA 2015 Analysis.R")
+```
+
+#The Canadian Engineering Education Association Research Collaboration (CEEA-RC): Annual Survey of Canadian Engineering Instructors
 
 * * *
 
@@ -11,7 +18,7 @@
 
 *This paper will focus on the the design and development of the SCEI, from framework to final implemented version.  We will describe how the collaboration progressed, providing a narrative and insight into the collaborative research was enacted; highlighting methods and approaches used.  We will also discuss the implementation of the survey, and common issues and challenges encountered.  We will present data, highlight the preliminary findings and discuss the future of the survey and the research collaboration.*
 
-**_Keywords: _***Collaborative Research, Faculty Attitudes, Survey Design*
+**_Keywords: _** *Collaborative Research, Faculty Attitudes, Survey Design*
  * * *
  
 ##1. INTRODUCTION
@@ -50,50 +57,15 @@ Due to the large-scale nature of the project, the steering committee decided on 
 
 The timeline for the project was agreed upon the steering committee, with the latter phases of the process allotted a greater amount of time to adjust for holidays and typical academic bottlenecks.
 
-<table>
-  <tr>
-    <td>Phase</td>
-    <td>Time</td>
-    <td>Task</td>
-  </tr>
-  <tr>
-    <td>Initial Phase</td>
-    <td>August-October 2013</td>
-    <td>Identify research questions, frameworks, timeline and scope</td>
-  </tr>
-  <tr>
-    <td>Modified Delphi Phase 1</td>
-    <td>November 2013</td>
-    <td>Collaborator feedback on research questions, frameworks, timeline and provide ideas for survey items</td>
-  </tr>
-  <tr>
-    <td>Modified Delphi Phase 2</td>
-    <td>December 2013 - February 2014</td>
-    <td>Steering committee works with experts to craft questions, and develop survey in a flexible web-based survey platform.  Draft survey internally reviewed to reduce overlap and total number of items.</td>
-  </tr>
-  <tr>
-    <td>Modified Delphi Phase 3</td>
-    <td>March-June 2014</td>
-    <td>Develop draft ethics application, LOI and consent forms for the project. 
-Present interim version of the survey at CEEA 2014 in Canmore. </td>
-  </tr>
-  <tr>
-    <td>Finalize Survey Instrument</td>
-    <td>June - October 2014</td>
-    <td>Incorporate final round of feedback.  Plan deployment strategy, obtain ethics approval from Queen’s.  Start ethics approval process at collaborating institutions </td>
-  </tr>
-  <tr>
-    <td>Deployment</td>
-    <td>October 2014 - January 2015-TBD</td>
-    <td>Obtain approval and deploy survey at participating institutions</td>
-  </tr>
-  <tr>
-    <td>Analysis</td>
-    <td>April 2015-TBD</td>
-    <td>Presentation of project at CEEA 2015 in Hamilton</td>
-  </tr>
-</table>
-
+| Phase                      | Time                            | Task                                                                                                                                                                                                |
+|----------------------------|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Initial Phase              | August-October 2013             | Identify research questions, frameworks, timeline and scope                                                                                                                                         |
+| Modified Delphi Phase 1    | November 2013                   | Collaborator feedback on research questions, frameworks, timeline and provide ideas for survey items                                                                                                |
+| Modified Delphi Phase 2    | December 2013 - February 2014   | Steering committee works with experts to craft questions, and develop survey in a flexible web-based survey platform. Draft survey internally reviewed to reduce overlap and total number of items. |
+| Modified Delphi Phase 3    | March-June 2014                 | Develop draft ethics application, LOI and consent forms for the project. Present interim version of the survey at CEEA 2014 in Canmore.                                                             |
+| Finalize Survey Instrument | June - October 2014             | Incorporate final round of feedback. Plan deployment strategy, obtain ethics approval from Queen’s. Start ethics approval process at collaborating institutions                                     |
+| Deployment                 | October 2014 - January 2015-TBD | Obtain approval and deploy survey at participating institutions                                                                                                                                     |
+| Analysis                   | April 2015-TBD                  | Presentation of project at CEEA 2015 in Hamilton                                                                                                                                                    |
 
 The initial phase provided collaborators with the research questions for the project along with the underlying framework for the second construct.  This framework is drawn from the work of John Biggs{Biggs:2001vf}, and addresses the development of quality teaching and learning in higher education, specifically focused on the views and beliefs of the instructor towards teaching and learning.  The steering committee felt that providing the more established framework would spark more discussion about items and potential revisions and will help and help shape the selection and development of the frameworks underlying the first and third research questions.   To streamline responses, the steering committee requested that each institution nominate a representative to collect all ranked feedback from the institution.   
 
@@ -141,34 +113,12 @@ These construct focuses on identifying what  resources are available to  instruc
 
 **Framework:**  Construct 3 is based on a conceptual framework for professional development adapted by one by Amundsen et al. (2005) that categorizes four main focal areas in faculty development: skills focus, method focus, process focus, and discipline focus{Amundsen:NBNNckS3}.  The Amundsen framework was adapted for a disciplinary focus to the following framework for professional development activities. 
 
-<table>
-  <tr>
-    <td>Category</td>
-    <td>Disciplinary Focus</td>
-    <td>Multidisciplinary Focus</td>
-  </tr>
-  <tr>
-    <td>Skills (presentations, discussion facilitation, learning technology)</td>
-    <td><li>Training on using engineering hardware/software in courses. 		<li>Personal reading on using engineering hardware/software in courses.   </td>
-   <td><li>Training on using general educational software/hardware (learning management systems, clickers, etc.)	   <li>Personal reading on general education hardware/software in courses (learning management systems, clickers, etc.)	   <li>Training on organization, presentations, writing on a blackboard, etc.</td>
-  </tr>
-  <tr>
-    <td>Teaching methods (project-based learning, case studies, active learning, etc.) (including signature pedagogies under disciplinary)</td>
-    <td><li>Workshops/training on teaching methods specific to engineering (education sessions at disciplinary conferences, workshops on teaching design, engineering labs, etc.)  		<li>Personal reading on teaching methods specific to engineering (education sessions at disciplinary conferences, workshops on teaching design, engineering labs, etc.)  </td>
-    <td><li>Workshops/training on general teaching methods (active learning, service learning, collaborative learning, etc.)  	    <li>Personal reading on general teaching methods (active learning, service learning, collaborative learning, etc.)  </td>
-  </tr>
-  <tr>
-    <td>Processes and critical analysis</td>
-    <td><li>Workshops/sessions on teaching and learning processes specific to engineering (course redevelopment workshops, curriculum design, assessment, graduate attributes)		<li>Facilitated sessions on working collaboratively as an engineering department on curriculum design, assessment, etc.		<li>Broad informal holistic discussions on teaching and learning issues with colleagues</td>
-    <td><li>Workshop/session on general teaching and learning processes (constructive alignment, curriculum design, assessment, etc.)  		<li>Facilitated sessions on curriculum design, assessment, learning science, etc.</td>
-  </tr>
-  <tr>
-    <td>Personal scholarship</td>
-    <td><li>Presenting and seeking feedback to engineering colleagues on teaching and learning innovations		<li>Scholarly work related to engineering education</td>
-    <td><li>Presenting to and seeking feedback from colleagues from a range of disciplines		<li>Scholarly work related to teaching and learning</td>
-  </tr>
-</table>
-
+| Categories                                                                      | Disciplinary Focus                                                                                                                                                                                                                                                                                                                                                           | Multidisciplinary Focus                                                                                                                                                                                                                                                                         |
+|---------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Skills (presentations, discussion facilitation, learning technology)            | Training on using engineering hardware/software in courses.  Personal reading on using engineering hardware/software in courses.                                                                                                                                                                                                                                             | Training on using general educational software/hardware (learning management systems, clickers, etc.)  Personal reading on general education hardware/software in courses (learning management systems, clickers, etc.)  Training on organization, presentations, writing on a blackboard, etc. |
+| Teaching methods (project-based learning, case studies, active learning, etc.)  | Workshops/training on teaching methods specific to engineering (education sessions at disciplinary conferences, workshops on teaching design, engineering labs, etc.)  Personal reading on teaching methods specific to engineering (education sessions at disciplinary conferences, workshops on teaching design, engineering labs, etc.)                                   | Workshops/training on general teaching methods (active learning, service learning, collaborative learning, etc.)  Personal reading on general teaching methods (active learning, service learning, collaborative learning, etc.)                                                                |
+| Processes and critical analysis                                                 | Workshops/sessions on teaching and learning processes specific to engineering (course redevelopment workshops, curriculum design, assessment, graduate attributes)  Facilitated sessions on working collaboratively as an engineering department on curriculum design, assessment, etc.  Broad informal holistic discussions on teaching and learning issues with colleagues | Workshop/session on general teaching and learning processes (constructive alignment, curriculum design, assessment, etc.) Facilitated sessions on curriculum design, assessment, learning science, etc.                                                                                         |
+| Personal scholarship                                                            | Presenting and seeking feedback to engineering colleagues on teaching and learning innovations  Scholarly work related to engineering education                                                                                                                                                                                                                              |                                                                                                                                                                                                                                                                                                 |
 
 ##2.3 Phase 3
 
@@ -223,6 +173,8 @@ The steering committee expects that following the presentation of this paper, th
 ##3.0 ANALYSIS
 
 The analysis presented in this paper is just a brief overview presenting summary statistics on the data collected from the 8 completed institutions.  
+
+
 
 
 
