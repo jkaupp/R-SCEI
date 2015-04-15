@@ -79,12 +79,12 @@ Present interim version of the survey at CEEA 2014 in Canmore. </td>
   </tr>
   <tr>
     <td>Finalize Survey Instrument</td>
-    <td>June - December 2014</td>
+    <td>June - October 2014</td>
     <td>Incorporate final round of feedback.  Plan deployment strategy, obtain ethics approval from Queen’s.  Start ethics approval process at collaborating institutions </td>
   </tr>
   <tr>
     <td>Deployment</td>
-    <td>January 2015-TBD</td>
+    <td>October 2014 - January 2015-TBD</td>
     <td>Obtain approval and deploy survey at participating institutions</td>
   </tr>
   <tr>
@@ -170,18 +170,67 @@ These construct focuses on identifying what  resources are available to  instruc
 </table>
 
 
+##2.3 Phase 3
 
-###2.2.2 DRAFT SURVEY
+
+###2.3.1 DRAFT SURVEY
 
 Once the frameworks were finalized, each working group created draft items for their respective construct.  These items were then reviewed by the steering committee alongside educational experts in survey creation.  The intent of the internal review was the streamline the draft survey prior to presenting it to collaborators at the CEEA 2014 meeting. This resulted in the removal and merging items, reallocating items to another construct, or outright removal of items that were deemed unnecessary.   The survey was then created in a web-based platform, FluidSurveys, as this was the survey platform used by the host institution, Queen’s University.   This draft survey was packaged with a brief synopsis of the research collaboration thus far (Goals, Development, Research Questions and Frameworks) and was presented to collaborators at the 2014 annual meeting.
 
-###2.2.3 ETHICS APPROVAL
+###2.2.2 ETHICS APPROVAL
 
-In anticipation of questions from the community regarding ethics approval for the project, a draft application was created along with a combined letter of information and consent form.  The draft application was completed by the steering committee and would be submitted to the General Research Ethics Board at Queen’s University upon the survey being finalized.  Additionally, the steering committee consulted with the director of the Queen’s Research Ethics Board for the proposed workflow for conducting collaborative national level research on this scale, shown below:
+In anticipation of questions from the community regarding ethics approval for the project, a draft application was created along with a combined letter of information and consent form.  The draft application was completed by the steering committee and would be submitted to the General Research Ethics Board (GREB) at Queen’s University upon the survey being finalized.  Additionally, the steering committee consulted with the director of the Queen’s Research Ethics Board (REB) for the proposed workflow for conducting collaborative national level research on this scale, shown below:
 
 1. Steering committee applies to Queen’s GREB for approval for the national study
 
 2. Upon obtaining approval from Queen’s apply to participating institutions individual REB boards, providing them the Queen’s REB Approval, and all required supporting information
 
 3. Once institutional approval is obtained, research can begin.
+
+The merged letter of information and consent form was drafted according to Tri-Council Policy Statement (TCPS) and Queen's University guidelines.  These documents were prepared to give collaborators at other institutions an idea of what type of information would be required in their own future applications to their institutional REBs.  In order to meet the needs of specific institutional REBs, these draft approval documents would most likely be ammended.  
+
+##2.4 FINALIZING THE SURVEY INSTRUMENT
+
+Immediate collaborator and community feedback was collected from the session at the conclusion of the 2014 CEEA annual meeting.  Collaborators were also encouraged to take some time to consider and reflect upon the draft version of the survey, and provide their feedback to the steering committee by the end of the summer.
+
+The majority of the feedback collected from the conference session was incredibly positiv and largely constituted corrections to tenses and phrasing about the instrument.  This resulted in some response options being changed, as collaborators thought some of the response options could be more clearly worded.  There were also some minor changes made to the demographics section of the survey, to provide better options and avenues for future analysis.  This feedback, along with the combined LOI and consent form was incorporated into a web-based survey in FluidSurveys.
+
+###2.4.1 ETHICS APPROVAL
+
+Upon completion of the final version of the survey, a formal application for the project was submitted to Queen's University.  The project received Queen's Ethics Approval September 10, 2014, nearly a full year after the project had started.  Due to the start of the academic year, the call for implementing the survey went out to collaborators on October 28th.  This message presented two options to deploy the survey, with each requiring that individual institutions obtain approval from their REB prior to starting research.  In order to support those new to this aspect of research, and to streamline individual applications, a member of the steering committee would work with collaborators to complete their respective ethics applications.
+
+1. **Institutionally Hosted**: Institutions host and run the survey themsleves. They collect their survey data, then share a copy of with the steering committee for use in the aggregate national dataset.  
+
+2. **Queen's Hosted**: Queen's hosts the survey, with each participating institution having it's own separate collector with unique variables to highlight differences in personnel and variations in addressing REB requests. Institutions are then provided a copy of their data for their own analysis.
+
+The typical workflow for deployment combined choosing deployment options, ethics approval, getting approval from the Dean of Engineering, contacting faculty, and surveying.  For clarity, it is shown below:
+
+1.  Select deployment strategy
+2.  Contact ethics board to determine application type
+3.  Work with steering committee member to obtain ethics approval
+4.  Contact the Dean of Engineering to inform them and obtain approval
+5.  Contact the faculty members to invite them to participate
+6.  Schedule a reminder to participate at a later date
+
+Institutional deployments started in late November of 2014, working towards obtaining institutional ethics approval.  The survey started to go live in January 2015.  The steering committee decided to let each institution set its own timeline, as many collaborators wished to coincide the deployment of the survey with specific events, or to adapt to unforeseen consequences.  
+
+##2.5 CURRENT STATUS
+
+As of writing this paper, there have been 10 different institutions that have been involved with the project thus far. The survey has launched and completed at 8 of those institutions, one of those institutions is waiting to contact faculty at the conclusion of the academic year, and one institution is just beginning the ethics approval process.  
+
+The steering committee expects that following the presentation of this paper, there may be more institutions wanting to participate in the project.  To accomodate those yet to survey their faculty, and to accomodate potential newcomers we are keeping the project open until September 2015, which coincides with the ethics renewal for the project.
+
+##3.0 ANALYSIS
+
+The analysis presented in this paper is just a brief overview presenting summary statistics on the data collected from the 8 completed institutions.  
+
+
+
+
+
+
+
+
+
+
 
