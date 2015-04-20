@@ -1,8 +1,9 @@
 ---
 output: html_document
 ---
-```{r, echo=FALSE, message=FALSE}
-source("/Users/Jake/ownCloud/R/Projects/R-SCEI/R/CEEA 2015 Analysis.R")
+```{r setup, echo=FALSE, message=FALSE}
+source("/Users/Jake/ownCloud/Projects/R/Projects/R-SCEI/R/CEEA 2015 Analysis.R")
+opts_chunk$set(echo = FALSE, dev="png", fig.retina = NULL, dpi=150, out.width = "487px", fig.align = "center")
 ```
 
 #The Canadian Engineering Education Association Research Collaboration (CEEA-RC): Annual Survey of Canadian Engineering Instructors
@@ -57,15 +58,32 @@ Due to the large-scale nature of the project, the steering committee decided on 
 
 The timeline for the project was agreed upon the steering committee, with the latter phases of the process allotted a greater amount of time to adjust for holidays and typical academic bottlenecks.
 
-| Phase                      | Time                            | Task                                                                                                                                                                                                |
-|----------------------------|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Initial Phase              | August-October 2013             | Identify research questions, frameworks, timeline and scope                                                                                                                                         |
-| Modified Delphi Phase 1    | November 2013                   | Collaborator feedback on research questions, frameworks, timeline and provide ideas for survey items                                                                                                |
-| Modified Delphi Phase 2    | December 2013 - February 2014   | Steering committee works with experts to craft questions, and develop survey in a flexible web-based survey platform. Draft survey internally reviewed to reduce overlap and total number of items. |
-| Modified Delphi Phase 3    | March-June 2014                 | Develop draft ethics application, LOI and consent forms for the project. Present interim version of the survey at CEEA 2014 in Canmore.                                                             |
-| Finalize Survey Instrument | June - October 2014             | Incorporate final round of feedback. Plan deployment strategy, obtain ethics approval from Queen’s. Start ethics approval process at collaborating institutions                                     |
-| Deployment                 | October 2014 - January 2015-TBD | Obtain approval and deploy survey at participating institutions                                                                                                                                     |
-| Analysis                   | April 2015-TBD                  | Presentation of project at CEEA 2015 in Hamilton                                                                                                                                                    |
+-------------------------------------------------------------------------------------------------------------
+ Phase          Time             Task 
+--------------- --------------- -----------------------------------------------------------------------------
+Initial Phase    August-        Identify research questions, frameworks, timeline and scope 
+                 October 2013
+
+Phase 1          November 2013  Collaborator feedback on research questions, frameworks, 
+                                timeline and provide ideas for survey items
+
+Phase 2          December 2013- Steering committee works with experts to craft questions, 
+                 February 2014  and develop survey in a flexible web-based survey platform.
+                                Draft survey internally reviewed to reduce overlap and total number of items.
+
+Phase 3          March-         Develop draft ethics application, LOI and consent forms for the project. 
+                 June 2014      Present interim version of the survey at CEEA 2014 in Canmore.
+              
+Finalize Survey  June-          Incorporate final round of feedback.
+Instrument       October 2014   Plan deployment strategy, obtain ethics approval from Queen’s.
+                                Start ethics approval process at collaborating institutions
+
+Deployment       November 2014- Obtain approval and deploy survey at participating institutions
+                 TBD   
+
+Analysis         April 2015-    Presentation of project at CEEA 2015 in Hamilton
+                 TBD 
+-------------------------------------------------------------------------------------------------------------
 
 The initial phase provided collaborators with the research questions for the project along with the underlying framework for the second construct.  This framework is drawn from the work of John Biggs{Biggs:2001vf}, and addresses the development of quality teaching and learning in higher education, specifically focused on the views and beliefs of the instructor towards teaching and learning.  The steering committee felt that providing the more established framework would spark more discussion about items and potential revisions and will help and help shape the selection and development of the frameworks underlying the first and third research questions.   To streamline responses, the steering committee requested that each institution nominate a representative to collect all ranked feedback from the institution.   
 
@@ -172,30 +190,319 @@ The steering committee expects that following the presentation of this paper, th
 
 ##3.0 ANALYSIS
 
-The analysis presented in this paper is just a brief overview presenting summary statistics on the data collected from the 8 completed institutions.  
+The analysis presented in this paper is just a brief overview presenting summary statistics on the data collected up until April 15th, 2015.  
 
-###Basic statistics
+###3.1 DEMOGRAPHICS
 
-```{r}
+The response for the survey was quite positive, illustrated below in table 1.
 
+```{r Summary}
+set.caption('1: Summary response statistics') 
+survey_data %>% 
+  summarise(Responses=n_distinct(key),
+            Institutions=n_distinct(collector),
+            "Avg.Time (mins)"=mean(time)) %>% 
+  pander
 ```
 
+Out of 22 institutions that expressed interest in the research collaboration, only 8 have implemented the survey.  At the April 15th cutoff point, two instituions were in the process of approval or implemenetation. If faculty counts were obtained for each institution, a true response rate could be genreated.  Respondents took an average time of 15.44 minutes to complete the survey, which is under the anecdotal 20 minute 'rule of thumb' to maintain survey engagement.
 
+The distribution of instructor classification, shown below in table 2, illustrates that respondents were mostly classified as a traditional professor.  Those who responded "other", show a mix of Emeritus professors, adminstrators and specialized staff shown in table 3.
 
-```{r, echo=FALSE}
-survey_data$collector %>% 
-  table %>% 
-  as.data.frame %>%
-  set_names(c("Institution","Responses")) %>% 
+```{r Q1}
+set.caption('2: Distribution of Instructor Classification') 
+survey_data %>% 
+  count("Academic Title"=position) %>% 
+  pander
+```
+
+```{r Q1b}
+set.caption('3: Other Roles') 
+survey_data %>% 
+  count("Academic Title"=position_other) %>%
+  na.omit %>% 
+  pander
+```
+
+The majority of the population was in the 7-15 years, with a relatively even distribution in the remaining categories, shown below in table 4. 
+```{r Q2}
+set.caption('4: Teaching Experience') 
+survey_data %>% 
+ count("Teaching Experience"=teaching_duration) %>% 
+ pander
+```
+
+The majority of the population was focused largely on undergraduate teaching, reporting that teaching occupies approximately 21-60% of faculty work time.
+
+```{r Q3&4,echo=FALSE}
+u.vs.g <- survey_data %>% 
+  count(undergrad_vs_grad) %>% 
+  set_names(c('Category','# of Responses:Undergrad vs Graduate Teaching'))
+
+avg.t.time <- survey_data %>% 
+  count(avg_teaching_time) %>% 
+  set_names(c('Category','# of Responses: Average teaching time per year'))
+
+set.caption('5: Teaching focus and Division of Work Time') 
+inner_join(u.vs.g,avg.t.time,by='Category') %>% 
+  set_names(c('Percentage','# of Responses:Undergrad vs Graduate Teaching','# of Responses: Average teaching time per year')) %>% 
+  pander
+```
+
+### 3.2 CONSTRUCT 1: GENERAL PERSPECTIVES AND ATTIUDES
+
+The majority of survey respondents would classify themselves as enjoying teaching to a great or fairly great extent, as illustrated in figure 1 below.
+
+```{r Q5}
+survey_data %>% 
+  ggplot(aes(x=enjoyment)) %>% 
+  + geom_histogram( fill="#5AB4AC") %>% 
+  + ggtitle("To what extent do you enjoy teaching?") %>% 
+  + scale_x_discrete(name="") %>% 
+  + theme(axis.text.x = element_text(angle=90, vjust=0.5, hjust=1)) %>% 
+  + theme_hc() %>% 
+  + scei.theme
+```
+
+The top teaching goals of survey respondents were transmission of information (76%, ranked by top priority), adopting a learner-centered development of understanding and facilitating construction of meaning (60%).  Nurturing students to reach their personal potential, was third (35%) with a relatively even split.  The lowest priorities were social change through education of the next generation of engineers (73% ranked lowest priority), apprenticeship by socializing students into the practice of engineering (55%).
+
+```{r Q6}
+survey_data %>%  
+  select(c(11:15)) %>% 
+  plyr::rename(c(goals_transmission = "Transmission",
+           goals_apprenticeship = "Apprenticeship",
+           goals_learner_centered = "Learner Centered",
+           goals_nuturing = "Nurturing",
+           goals_social_change = "Social Change")) %>% 
+  likert() %>% 
+  plot() %>% 
+  + ggtitle('Teaching Goals of Engineering Faculty') %>% 
+  + scei.theme %>% 
+  + theme(legend.text= element_text(size=6))
+```
+
+The primary influences of survey respondents to make changes in their teaching are oultined below in figure 3.  Personal obersvation from previous teaching (92%) and course eveluations (63%) were the mostinfluential, with professional development (31%), literature on teaching and learning (29%) and input from colleagues being indicated as being less influential.
+
+```{r Q7}
+survey_data %>%  
+  select(c(18:22)) %>% 
+  plyr::rename(c(changes_personal_observation = "Personal Observation",
+           changes_colleague_input = "Colleague Input",
+           changes_course_evaluations = "Course Evaluations",
+           changes_literature = "Literature",
+           changes_pd = "Professional Development")) %>% 
+  likert() %>% 
+  plot() %>% 
+  + ggtitle('Influences to change teaching') %>% 
+  + scei.theme %>% 
+  + theme(legend.text= element_text(size=6))
+```
+
+```{r Q8}
+q.8 <- survey_data %>% 
+  select(c(25:37)) %>% 
+  colSums(na.rm=TRUE) %>% 
+  data.frame(names(.),.)
+
+rownames(q.8) <- NULL
+
+q.8 %<>%
+  setNames(c("Reason","Frequency"))
+
+q.8$Reason %<>%
+ str_replace_all("_"," ") %>% 
+ stri_trans_totitle()
+
+set.caption('6: Other Roles') 
+q.8 %>% 
   pander
 ```
 
 
+```{r Q10}
+survey_data %>% 
+  select(c(39:41)) %>% 
+  plyr::rename(c(instructor_teaching_practises = "Responsible to know &\n follow best teaching practices",
+           instructor_content = "Responsible to know content &\n articulate it well.",
+           instructor_motivate_and_provide = "Responsible to motivate students,\n explain learning &\n provide engaging learning opportunities.")) %>% 
+  likert() %>% 
+  plot() %>% 
+  + ggtitle('Perception of the responsibility\n of the instructor in the\n teaching and learning process') %>% 
+  + scei.theme %>% 
+  + theme(legend.text= element_text(size=6))
+```
+
+```{r Q11}
+survey_data %>% 
+  select(c(42:44)) %>% 
+  plyr::rename(c(student_ability_no_responsbility = "If the student has the ability to do the work,\n they doesn’t really need to take on any added responsibility.",
+           student_responsible_background_motivation = "The student is responsible for background knowledge and motivation",
+           student_attend_classes = "The student is responsible to attend classes, be attentive,\n take good notes, do the readings and the assignments, and study.")) %>% 
+  likert %>% 
+  plot %>% 
+  + ggtitle('Perception of the responsibility\n of the of the student in the\n teaching and learning process') %>% 
+  + scei.theme %>% 
+  + theme(legend.text= element_text(size=6))
+```
+
+```{r Q12}
+survey_data %>% 
+  select(c(45:47)) %>% 
+  plyr::rename(c(methods_supporting_outcomes = "Use teaching and assessment methods that support clearly stated learning outcomes.",
+           presentation_opportunity_management = "Speak effectively, provide structured and engaging learning opportunities, and manage the classroom effectively.",
+           content_clarity = "Know the subject very well and explain it very clearly.")) %>% 
+  likert %>% 
+  plot %>% 
+  + ggtitle('Perception of how instructors can positively influence student success') %>% 
+  + scei.theme %>% 
+  + theme(legend.text= element_text(size=6))
+```
+
+```{r Q14&15}
+survey_data %>% 
+  select(c(49:50)) %>% 
+  plyr::rename(c(knowledge_expert = "I think of myself as a knowledge expert in my area of specialization.",
+           teaching_expert = "I think of myself as an expert in teaching my area of specialization")) %>% 
+  likert %>% 
+  plot %>% 
+  + ggtitle('Perception of instructor expertise in disciplinary content knowledge and teaching') %>% 
+  + scei.theme %>% 
+  + theme(legend.text= element_text(size=6))
+```
+
+```{r Q16}
+q.16 <- survey_data %>% 
+  select(c(51)) %>% 
+  table() %>% 
+  as.data.frame %>% 
+  setNames(c("Action","Frequency"))
+
+set.caption('7: Perception of important uses of student course & teaching evaluations') 
+q.16 %>% 
+  pander
+```
+
+```{r Q18}
+survey_data %>% 
+  select(c(53:56)) %>% 
+  plyr::rename(c(teaching_skills_development = "Teaching Skills Development",
+           teaching_assessment_methods = "Teaching Assessment Methods",
+           teaching_processes = "Teaching Processes",
+           scholarship = "Scholarhip")) %>% 
+  likert %>% 
+  plot %>% 
+  + ggtitle('Perception of the importance of select professional development activites') %>% 
+  + scei.theme %>% 
+  + theme(legend.text= element_text(size=6))
+```
+
+```{r Q19}
+survey_data %>% 
+  select(c(57:60)) %>% 
+  plyr::rename(c(support_teaching_skills_development = "Support for Teaching Skills Development",
+           support_teaching_assessment_methods = "Support for Teaching Assessment Methods",
+           support_teaching_processes = "Support for Teaching Processes",
+           support_scholarship = "Support for Scholarhip")) %>% 
+  likert %>% 
+  plot %>% 
+  + ggtitle('Instructor awarness and participation in professional development activities') %>% 
+  + scei.theme %>% 
+  + theme(legend.text= element_text(size=6))
+```
+
+```{r Q20}
+q.20 <- survey_data %>% 
+  select(c(61:70)) %>% 
+  colSums(na.rm = TRUE) %>% 
+  data.frame(names(.),.)
+
+rownames(q.20) <- NULL
+
+q.20 %<>%
+  setNames(c("Activity","Frequency"))
+
+q.20$Activity <- c("Attended a seminar on teaching (1-2 hours of professional development)",
+                   "Participated in a workshop on teaching  (3 hours to a full day of professional development)",
+                  "Participated in a multi-day workshop on teaching (several day professional development activity)",
+                  "Participated in conference related to education (either disciplinary or not)",
+                  "Learning independently through reading, etc.",
+                  "Led workshops focusing on teaching and learning development",
+                  "Internal university funding to support course or program development",
+                  "External funding to support course or program development",
+                  "Internal university grants supporting educational research",
+                  "External grants supporting educational research)")
+
+set.caption('8: Instructor participation in faculty development activities in the past 5 years') 
+q.20 %>% 
+  pander
+```
+
+```{r Q21}
+survey_data %>% 
+  select(c(71:79)) %>% 
+  plyr::rename(c(obs_timing = "Timing of event",
+                 obs_availability = "Availability of event",
+                 obs_location = "Location of event",
+                 obs_awareness = "Awareness of event",
+                 obs_relevance = "Relevance of event",
+                 obs_workload = "Workload",
+                 obs_lack_funding = "Lack of funding opportunities",
+                 obs_lack_expertise = "Lack of access to expertise",
+                 obs_specificity = "General vs discipline specific nature of the event")) %>% 
+  likert() %>% 
+  plot %>% 
+  + ggtitle('Instructor perception of obstacles to professional development') %>% 
+  + scei.theme %>% 
+  + theme(legend.text= element_text(size=6))
+```
 
 
+```{r Q22}
+set.caption('9: Percentage of teaching-focused professional development activities attended in the past five years ') 
+survey_data %>% 
+  select(c(80)) %>% 
+  table() %>% 
+  as.data.frame %>% 
+  setNames(c("Percentage","Frequency")) %>% 
+  pander
+```
 
 
+```{r Q23a}
+survey_data %>% 
+  select(c(81:84)) %>% 
+  plyr::rename(c(nf_teaching_skills = "Teaching skills development",
+                 nf_teaching_assessment_methods = "Teaching of assessment methods",
+                 nf_teaching_processes = "Teaching processes",
+                 nf_scholarship = "Scholarship")) %>% 
+  likert() %>% 
+  plot %>% 
+  + ggtitle('Instructor perception of needed areas of professional development as training for new faculty') %>% 
+  + scei.theme %>% 
+  + theme(legend.text= element_text(size=6))
+```
 
+```{r Q23b}
+survey_data %>% 
+  select(c(85:88)) %>% 
+  plyr::rename(c(ce_teaching_skills = "Teaching skills development",
+                 ce_teaching_assessment_methods = "Teaching of assessment methods",
+                 ce_teaching_processes = "Teaching processes",
+                 ce_scholarship = "Scholarship")) %>% 
+  likert() %>% 
+  plot %>% 
+  + ggtitle('Instructor perception of needed areas of professional development as continuing education for for experienced faculty') %>% 
+  + scei.theme %>% 
+  + theme(legend.text= element_text(size=6))
 
+```
 
-
+```{r Q24}
+set.caption('10: Instructor perception of institutions taking professional development activities into account during annual performance evaluations ') 
+survey_data %>% 
+  select(c(89)) %>% 
+  table() %>% 
+  as.data.frame %>% 
+  setNames(c("Percentage","Frequency")) %>% 
+  pander
+```
