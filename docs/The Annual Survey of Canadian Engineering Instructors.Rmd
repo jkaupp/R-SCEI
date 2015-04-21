@@ -2,11 +2,14 @@
 bibliography: references.bib
 output:
   html_document:
-    fig_caption: yes
+    fig_caption:
+    - yes
+  word_document:
+  - default
 ---
 ```{r setup, echo=FALSE, message=FALSE}
 source("/Users/Jake/ownCloud/Projects/R/Projects/R-SCEI/R/CEEA 2015 Analysis.R")
-opts_chunk$set(echo = FALSE, dev="svg", fig.retina = NULL, dpi=150, out.width = "500px", fig.align = "center")
+opts_chunk$set(echo = FALSE, dev="png", fig.retina = NULL, dpi=150, out.width = "800px", fig.align = "center")
 ```
 
 #The Canadian Engineering Education Association Research Collaboration (CEEA-RC): Annual Survey of Canadian Engineering Instructors
@@ -212,14 +215,14 @@ Out of 22 institutions that expressed interest in the research collaboration, on
 
 The distribution of instructor classification, shown below in table 2, illustrates that respondents were mostly classified as a traditional professor.  Those who responded "other", show a mix of emeritus professors, adminstrators and specialized staff shown in table 3.
 
-```{r Q1 Table 2, fig.cap="Instructor Academic Title"}
+```{r Q1_Table_2, fig.cap="Instructor Academic Title"}
 set.caption('2: Distribution of Instructor Classification') 
 survey_data %>% 
   count("Academic Title"=position) %>% 
   pander
 ```
 
-```{r Q1b Table 3, fig.cap="Other Instructor Roles"}
+```{r Q1b_Table_3, fig.cap="Other Instructor Roles"}
 set.caption('3: Other Roles') 
 survey_data %>% 
   count("Academic Title"=position_other) %>%
@@ -256,7 +259,7 @@ inner_join(u.vs.g,avg.t.time,by='Category') %>%
 
 The majority of survey respondents would classify themselves as enjoying teaching to a great or fairly great extent, as illustrated in figure 1 below.
 
-```{r Q5 Figure 1, fig.cap="Figure 1"}
+```{r Q5_Figure_1, fig.cap="Figure 1"}
 survey_data %>% 
   select(c(10)) %>% 
   plyr::rename(c(enjoyment = paste("Extent of enjoyment"))) %>% 
