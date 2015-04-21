@@ -1,9 +1,12 @@
 ---
-output: html_document
+bibliography: references.bib
+output:
+  html_document:
+    fig_caption: yes
 ---
 ```{r setup, echo=FALSE, message=FALSE}
 source("/Users/Jake/ownCloud/Projects/R/Projects/R-SCEI/R/CEEA 2015 Analysis.R")
-opts_chunk$set(echo = FALSE, dev="png", fig.retina = NULL, dpi=150, out.width = "487px", fig.align = "center")
+opts_chunk$set(echo = FALSE, dev="svg", fig.retina = NULL, dpi=150, out.width = "500px", fig.align = "center")
 ```
 
 #The Canadian Engineering Education Association Research Collaboration (CEEA-RC): Annual Survey of Canadian Engineering Instructors
@@ -22,7 +25,7 @@ opts_chunk$set(echo = FALSE, dev="png", fig.retina = NULL, dpi=150, out.width = 
 **_Keywords: _** *Collaborative Research, Faculty Attitudes, Survey Design*
  * * *
  
-##1. INTRODUCTION
+#1. INTRODUCTION
 
 The growing interest in engineering education research, as well as the continued community support for the Canadian Engineering Education Association (CEEA), led to the creation of the first collaborative research project at the 2013 annual meeting in Montreal.  The goals of the project are threefold:
 
@@ -48,7 +51,7 @@ The committee, after reviewing the feedback and community gathered from the 2013
 
 3. What are the current faculty attitudes toward, and engagement in, professional development activities related to teaching?
 
-Due to the large-scale nature of the project, the steering committee decided on using a modified Delphi process to elicit ideas from collaborators{Brown:1968tz}.  This is a well-established method to elicit the opinions of experts and professionals, and has been used for survey and instrument development for educational research{Facione:1990vn}.  The modified process used in this project is outlined below:  
+Due to the large-scale nature of the project, the steering committee decided on using a modified Delphi process to elicit ideas from collaborators[@Brown:1968tz; @Sackman:1974tb].  This is a well-established method to elicit the opinions of experts and professionals, and has been used for survey and instrument development for educational research[@Facione:1990vn].  The modified process used in this project is outlined below:  
 
 1. Elicit a ranked list of proposed questions or question topics from each collaborator. These proposals must address some aspect of the research questions. Collaborators rank their own ideas from highest to lowest priority. 
 
@@ -85,11 +88,11 @@ Analysis         April 2015-    Presentation of project at CEEA 2015 in Hamilton
                  TBD 
 -------------------------------------------------------------------------------------------------------------
 
-The initial phase provided collaborators with the research questions for the project along with the underlying framework for the second construct.  This framework is drawn from the work of John Biggs{Biggs:2001vf}, and addresses the development of quality teaching and learning in higher education, specifically focused on the views and beliefs of the instructor towards teaching and learning.  The steering committee felt that providing the more established framework would spark more discussion about items and potential revisions and will help and help shape the selection and development of the frameworks underlying the first and third research questions.   To streamline responses, the steering committee requested that each institution nominate a representative to collect all ranked feedback from the institution.   
+The initial phase provided collaborators with the research questions for the project along with the underlying framework for the second construct.  This framework is drawn from the work of John Biggs[@Biggs:2001vf], and addresses the development of quality teaching and learning in higher education, specifically focused on the views and beliefs of the instructor towards teaching and learning.  The steering committee felt that providing the more established framework would spark more discussion about items and potential revisions and will help and help shape the selection and development of the frameworks underlying the first and third research questions.   To streamline responses, the steering committee requested that each institution nominate a representative to collect all ranked feedback from the institution.   
 
 ###2.2 PHASE 2
 
-The community feedback was reviewed by the steering committee and categorized according to which research question the comments or items addressed.  These responses were insightful and highly valuable, with the strong themes being represented in the responses providing direction to finalize the frameworks.  Suggestions for survey items were well distributed across the research questions and provided many insights into potential areas of analysis.   The steering committee then divided development, forming working groups to develop or refine the framework for each research question, and to develop items for the draft survey.   To ensure equitable work, the working group focusing on the second research question was also tasked with developing a module to collect demographic information of the survey population.
+The community feedback was reviewed by the steering committee and categorized according to which research question the comments or items addressed.  These responses were insightful and highly valuable, with the strong themes being represented in the responses providing direction to finalize the frameworks.  Suggestions for survey items were well distributed across the research questions and provided many insights into potential areas of analysis.   The steering committee then divided development, forming working groups to develop or refine the framework for each research question, and to develop items for the draft survey.  To ensure equitable work, the working group focusing on the second research question was also tasked with developing a module to collect demographic information of the survey population.
 
 ####2.2.1 SURVEY CONSTRUCTS
 
@@ -101,7 +104,7 @@ This construct focuses on general perspectives and instructor attitudes about te
 
 **Research Question: **What are the current instructor attitudes about teaching and learning?
 
-**Framework:**  This construct draws upon the theories underlying the teaching perspectives inventory (TPI){Pratt:2001wm}.  The TPI focuses on five conceptual areas or modes of instruction: Transmission, Apprenticeship, Developmental, Nurturing, and Social Reform. The TPI contains questions about learning, motivation, the goals of education, their role as a teacher, the nature of the learners they taught, and the influence of context on their teaching.  
+**Framework:**  This construct draws upon the theories underlying the teaching perspectives inventory (TPI)[@Pratt:2000vd].  The TPI focuses on five conceptual areas or modes of instruction: Transmission, Apprenticeship, Developmental, Nurturing, and Social Reform. The TPI contains questions about learning, motivation, the goals of education, their role as a teacher, the nature of the learners they taught, and the influence of context on their teaching.  
 
 **<u>Construct 2</u>**
 
@@ -109,7 +112,7 @@ This construct focuses on the role of the instructor, their conceptions of effec
 
 **Research Question:** What are the current faculty attitudes about the role of the instructor and their duties in both the course and institution ?
 
-**Framework:**  The underlying framework for this construct was developed by John Biggs, and identifies three common attitudes about teaching in higher education{Biggs:2001vf}.
+**Framework:**  The underlying framework for this construct was developed by John Biggs, and identifies three common attitudes about teaching in higher education[@Biggs:2001vf].
 
 **Level 1. Focus: What the student is.**
 
@@ -129,7 +132,7 @@ These construct focuses on identifying what  resources are available to  instruc
 
 **Research Question:** What are the current faculty attitudes toward, and engagement in, professional development activities related to teaching?
 
-**Framework:**  Construct 3 is based on a conceptual framework for professional development adapted by one by Amundsen et al. (2005) that categorizes four main focal areas in faculty development: skills focus, method focus, process focus, and discipline focus{Amundsen:NBNNckS3}.  The Amundsen framework was adapted for a disciplinary focus to the following framework for professional development activities. 
+**Framework:**  Construct 3 is based on a conceptual framework for professional development adapted by one by Amundsen et al. (2005) that categorizes four main focal areas in faculty development: skills focus, method focus, process focus, and discipline focus[@Amundsen:2005wb].  The Amundsen framework was adapted for a disciplinary focus to the following framework for professional development activities. 
 
 | Categories                                                                      | Disciplinary Focus                                                                                                                                                                                                                                                                                                                                                           | Multidisciplinary Focus                                                                                                                                                                                                                                                                         |
 |---------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -143,7 +146,7 @@ These construct focuses on identifying what  resources are available to  instruc
 
 ###2.3.1 DRAFT SURVEY
 
-Once the frameworks were finalized, each working group created draft items for their respective construct.  These items were then reviewed by the steering committee alongside educational experts in survey creation.  The intent of the internal review was the streamline the draft survey prior to presenting it to collaborators at the CEEA 2014 meeting. This resulted in the removal and merging items, reallocating items to another construct, or outright removal of items that were deemed unnecessary.   The survey was then created in a web-based platform, FluidSurveys, as this was the survey platform used by the host institution, Queen’s University.   This draft survey was packaged with a brief synopsis of the research collaboration thus far (Goals, Development, Research Questions and Frameworks) and was presented to collaborators at the 2014 annual meeting.
+Once the frameworks were finalized, each working group created draft items for their respective construct.  These items were then reviewed by the steering committee alongside educational experts in survey creation.  The intent of the internal review was the streamline the draft survey prior to presenting it to collaborators at the CEEA 2014 meeting. This resulted in the removal and merging items, reallocating items to another construct, or outright removal of items that were deemed unnecessary.   The survey was then created in a web-based platform, FluidSurveys, as this was the survey platform used by the host institution, Queen’s University.   This draft survey was packaged with a brief synopsis of the research collaboration thus far (Goals, Development, Research Questions and Frameworks) and was presented to collaborators at the 2014 annual meeting.  It was at this point that the instrument was named the "Survey of Canadian Engineering Instructors" or SCEI.
 
 ###2.2.2 ETHICS APPROVAL
 
@@ -188,15 +191,15 @@ As of writing this paper, there have been 10 different institutions that have be
 
 The steering committee expects that following the presentation of this paper, there may be more institutions wanting to participate in the project.  To accomodate those yet to survey their faculty, and to accomodate potential newcomers we are keeping the project open until September 2015, which coincides with the ethics renewal for the project.
 
-##3.0 ANALYSIS
+#3. RESULTS 
 
-The analysis presented in this paper is just a brief overview presenting summary statistics on the data collected up until April 15th, 2015.  
+The results presented in this paper are a presentation of summary statistics and general observations regarding constructs and items.  This interim report utilizes all survey responses collected up until April 15th, 2015.  A more thorough analysis of the survey and the results will be conducted in the future, upon the conclusion of data collection.
 
-###3.1 DEMOGRAPHICS
+##3.1 DEMOGRAPHICS
 
 The response for the survey was quite positive, illustrated below in table 1.
 
-```{r Summary}
+```{r Summary, fig.cap="Summary Statistics"}
 set.caption('1: Summary response statistics') 
 survey_data %>% 
   summarise(Responses=n_distinct(key),
@@ -207,16 +210,16 @@ survey_data %>%
 
 Out of 22 institutions that expressed interest in the research collaboration, only 8 have implemented the survey.  At the April 15th cutoff point, two instituions were in the process of approval or implemenetation. If faculty counts were obtained for each institution, a true response rate could be genreated.  Respondents took an average time of 15.44 minutes to complete the survey, which is under the anecdotal 20 minute 'rule of thumb' to maintain survey engagement.
 
-The distribution of instructor classification, shown below in table 2, illustrates that respondents were mostly classified as a traditional professor.  Those who responded "other", show a mix of Emeritus professors, adminstrators and specialized staff shown in table 3.
+The distribution of instructor classification, shown below in table 2, illustrates that respondents were mostly classified as a traditional professor.  Those who responded "other", show a mix of emeritus professors, adminstrators and specialized staff shown in table 3.
 
-```{r Q1}
+```{r Q1 Table 2, fig.cap="Instructor Academic Title"}
 set.caption('2: Distribution of Instructor Classification') 
 survey_data %>% 
   count("Academic Title"=position) %>% 
   pander
 ```
 
-```{r Q1b}
+```{r Q1b Table 3, fig.cap="Other Instructor Roles"}
 set.caption('3: Other Roles') 
 survey_data %>% 
   count("Academic Title"=position_other) %>%
@@ -225,16 +228,16 @@ survey_data %>%
 ```
 
 The majority of the population was in the 7-15 years, with a relatively even distribution in the remaining categories, shown below in table 4. 
-```{r Q2}
+```{r Q2 Table 4, fig.cap="Teaching Experience"}
 set.caption('4: Teaching Experience') 
 survey_data %>% 
  count("Teaching Experience"=teaching_duration) %>% 
  pander
 ```
 
-The majority of the population was focused largely on undergraduate teaching, reporting that teaching occupies approximately 21-60% of faculty work time.
+The majority of the population was focused largely on undergraduate teaching, reporting that teaching occupies approximately 21-60% of faculty work time, illustrated below in table 5.
 
-```{r Q3&4,echo=FALSE}
+```{r Q3&4 Table 5, fig.cap="Teaching focus and division of work time"}
 u.vs.g <- survey_data %>% 
   count(undergrad_vs_grad) %>% 
   set_names(c('Category','# of Responses:Undergrad vs Graduate Teaching'))
@@ -249,24 +252,23 @@ inner_join(u.vs.g,avg.t.time,by='Category') %>%
   pander
 ```
 
-### 3.2 CONSTRUCT 1: GENERAL PERSPECTIVES AND ATTIUDES
+## 3.2 CONSTRUCT 1: GENERAL PERSPECTIVES AND ATTIUDES
 
 The majority of survey respondents would classify themselves as enjoying teaching to a great or fairly great extent, as illustrated in figure 1 below.
 
-```{r Q5}
+```{r Q5 Figure 1, fig.cap="Figure 1"}
 survey_data %>% 
-  ggplot(aes(x=enjoyment)) %>% 
-  + geom_histogram( fill="#5AB4AC") %>% 
-  + ggtitle("To what extent do you enjoy teaching?") %>% 
-  + scale_x_discrete(name="") %>% 
-  + theme(axis.text.x = element_text(angle=90, vjust=0.5, hjust=1)) %>% 
-  + theme_hc() %>% 
-  + scei.theme
+  select(c(10)) %>% 
+  plyr::rename(c(enjoyment = paste("Extent of enjoyment"))) %>% 
+  likert %>% 
+  plot(wrap=20) %>% 
+  + ggtitle(str_wrap('Engineering instructors enjoying of teaching',50)) %>% 
+  + theme(legend.text= element_text(size=9))
 ```
 
 The top teaching goals of survey respondents were transmission of information (76%, ranked by top priority), adopting a learner-centered development of understanding and facilitating construction of meaning (60%).  Nurturing students to reach their personal potential, was third (35%) with a relatively even split.  The lowest priorities were social change through education of the next generation of engineers (73% ranked lowest priority), apprenticeship by socializing students into the practice of engineering (55%).
 
-```{r Q6}
+```{r Q6 Figure 2, fig.cap="Figure 2"}
 survey_data %>%  
   select(c(11:15)) %>% 
   plyr::rename(c(goals_transmission = "Transmission",
@@ -275,15 +277,14 @@ survey_data %>%
            goals_nuturing = "Nurturing",
            goals_social_change = "Social Change")) %>% 
   likert() %>% 
-  plot() %>% 
-  + ggtitle('Teaching Goals of Engineering Faculty') %>% 
-  + scei.theme %>% 
-  + theme(legend.text= element_text(size=6))
+  plot(wrap=20) %>% 
+  + ggtitle(str_wrap('Reported teaching goals of engineering instructors',50)) %>% 
+  + theme(legend.text= element_text(size=9))
 ```
 
 The primary influences of survey respondents to make changes in their teaching are oultined below in figure 3.  Personal obersvation from previous teaching (92%) and course eveluations (63%) were the mostinfluential, with professional development (31%), literature on teaching and learning (29%) and input from colleagues being indicated as being less influential.
 
-```{r Q7}
+```{r Q7 Figure 3, fig.cap="Figure 3"}
 survey_data %>%  
   select(c(18:22)) %>% 
   plyr::rename(c(changes_personal_observation = "Personal Observation",
@@ -292,13 +293,14 @@ survey_data %>%
            changes_literature = "Literature",
            changes_pd = "Professional Development")) %>% 
   likert() %>% 
-  plot() %>% 
-  + ggtitle('Influences to change teaching') %>% 
-  + scei.theme %>% 
-  + theme(legend.text= element_text(size=6))
+  plot(wrap=20) %>% 
+  + ggtitle(str_wrap('Instuctors reported influences to change teaching',50)) %>% 
+  + theme(legend.text= element_text(size=9))
 ```
 
-```{r Q8}
+Survey respondents indicated that, when they are dissatisfied with student learning in their course, they believe that the top three reasons are: student workload, inadequate learning skills and underprepared or unmotivated students.  There were very few responses that indicated teaching, resources or curriculum as a potential factor. 
+
+```{r Q8 Table 6, fig.cap="Common problems with student learning"}
 q.8 <- survey_data %>% 
   select(c(25:37)) %>% 
   colSums(na.rm=TRUE) %>% 
@@ -313,64 +315,71 @@ q.8$Reason %<>%
  str_replace_all("_"," ") %>% 
  stri_trans_totitle()
 
-set.caption('6: Other Roles') 
+set.caption('6: Instructor perceptions of common problems when dissatisfied with student learning') 
 q.8 %>% 
   pander
 ```
 
+## 3.3 CONSTRUCT 2: ATTITUDES ABOUT THE ROLE AND DUTIES OF AN INSTRUCTOR
 
-```{r Q10}
+When asked a series of questions to determine the roles and duties of instructors, survey respondents overwhelmingly indicated that the primary responsibility of an instructor was to motivate students to learn, provide them with a clear explanation of what it is they are expected learn, and provide learning opportunities in which they can deeply engage (61%). The other two categories were a bit difficult to discern, with content knowlegde and articulation and knowledge and application of best teaching practices being more evenly split in rankings, as illustrated below in figure 4.
+
+```{r Q10 Figure 4, fig.cap="Figure 4"}
 survey_data %>% 
   select(c(39:41)) %>% 
-  plyr::rename(c(instructor_teaching_practises = "Responsible to know &\n follow best teaching practices",
-           instructor_content = "Responsible to know content &\n articulate it well.",
-           instructor_motivate_and_provide = "Responsible to motivate students,\n explain learning &\n provide engaging learning opportunities.")) %>% 
+  plyr::rename(c(instructor_teaching_practises = "Know and follow best teaching practices in order to convey to students the important concepts and complex understandings of the content",
+           instructor_content = "Know the content well and be able to clearly articulate it",
+           instructor_motivate_and_provide = "Motivate students to learn, provide a clear explanation of what they are expected learn, and provide learning opportunities in which they can deeply engage")) %>% 
   likert() %>% 
-  plot() %>% 
-  + ggtitle('Perception of the responsibility\n of the instructor in the\n teaching and learning process') %>% 
-  + scei.theme %>% 
-  + theme(legend.text= element_text(size=6))
+  plot(wrap=20) %>% 
+  + ggtitle(str_wrap('Perception of instructor responsibility in the teaching and learning process',50)) %>% 
+  + theme(legend.text = element_text(size=9))
 ```
 
-```{r Q11}
+Instructor perceptions of student responsibilites in teaching and learning show that the majority of survey respondents agree that the student is responsible for knowledge and motivation (54%), as well as 'doing the work' (48%).  Nearly all respondents indicated that students share the responsibility in teaching and learning, ranking the statement "If the student has the ability to do the work, he or she doesn't really need to take on any added responsibility" last (Figure 5).
+
+```{r Q11 Figure 5, fig.cap="Figure 5"}
 survey_data %>% 
   select(c(42:44)) %>% 
-  plyr::rename(c(student_ability_no_responsbility = "If the student has the ability to do the work,\n they doesn’t really need to take on any added responsibility.",
-           student_responsible_background_motivation = "The student is responsible for background knowledge and motivation",
-           student_attend_classes = "The student is responsible to attend classes, be attentive,\n take good notes, do the readings and the assignments, and study.")) %>% 
+  plyr::rename(c(student_ability_no_responsbility = "If the student has the ability to do the work, he or she doesn't really need to take on any added responsibility",
+           student_responsible_background_motivation = "Appropriate background knowledge & to develop his or her own motivation to learn about the subject",
+           student_attend_classes = "Attend classes, be attentive, take good notes, do the readings & assignments, and study")) %>% 
   likert %>% 
-  plot %>% 
-  + ggtitle('Perception of the responsibility\n of the of the student in the\n teaching and learning process') %>% 
-  + scei.theme %>% 
-  + theme(legend.text= element_text(size=6))
+  plot(wrap=20) %>% 
+  + ggtitle(str_wrap('Instructor perception of student responsibility in the teaching and learning process',50)) %>% 
+  + theme(legend.text= element_text(size=9))
 ```
 
-```{r Q12}
+Interestingly, instructor perceptions of how to positively influence student success identify a teacher focused theme, illustrated in figure 6.  Effective presentation, classroom management and engaging learning opportunities was ranked as most important (56%), with the other two choices of content mastery and clear articulation adnd teaching and assessment methods supporting outcomes being virtually indistinguishable.
+
+```{r Q12 Figure 6, fig.cap="Figure 6"}
 survey_data %>% 
   select(c(45:47)) %>% 
-  plyr::rename(c(methods_supporting_outcomes = "Use teaching and assessment methods that support clearly stated learning outcomes.",
-           presentation_opportunity_management = "Speak effectively, provide structured and engaging learning opportunities, and manage the classroom effectively.",
-           content_clarity = "Know the subject very well and explain it very clearly.")) %>% 
+  plyr::rename(c(methods_supporting_outcomes = "Use teaching and assessment methods that support clearly stated learning outcomes",
+           presentation_opportunity_management = "Speak effectively, provide structured and engaging learning opportunities, and manage the classroom effectively",
+           content_clarity = "Know the subject very well and explain it very clearly")) %>% 
   likert %>% 
-  plot %>% 
-  + ggtitle('Perception of how instructors can positively influence student success') %>% 
-  + scei.theme %>% 
-  + theme(legend.text= element_text(size=6))
+  plot(wrap=20) %>% 
+  + ggtitle(str_wrap('Perception of how instructors can positively influence student success',50)) %>% 
+  + theme(legend.text= element_text(size=9))
 ```
 
-```{r Q14&15}
+Nearly all respondents identified themselves as both a knowledge and teaching expert in their area of specialization (Figure 7).
+
+```{r Q14&15,fig.cap="Figure 7"}
 survey_data %>% 
   select(c(49:50)) %>% 
-  plyr::rename(c(knowledge_expert = "I think of myself as a knowledge expert in my area of specialization.",
+  plyr::rename(c(knowledge_expert = "I think of myself as a knowledge expert in my area of specialization",
            teaching_expert = "I think of myself as an expert in teaching my area of specialization")) %>% 
   likert %>% 
-  plot %>% 
-  + ggtitle('Perception of instructor expertise in disciplinary content knowledge and teaching') %>% 
-  + scei.theme %>% 
-  + theme(legend.text= element_text(size=6))
+  plot(wrap=20) %>% 
+  + ggtitle(str_wrap('Perception of instructor expertise in disciplinary content knowledge and teaching',50)) %>% 
+  + theme(legend.text= element_text(size=9))
 ```
 
-```{r Q16}
+Nearly all respondents responded that they primarily use student course and teaching evaluations to improve delivery (68 responses).  Other uses of student evaluations were spread relatively equal across other categories, with only a very small minority (4 responses) not reviewing course evaluations.
+
+```{r Q16, fig.cap="Table 7"}
 q.16 <- survey_data %>% 
   select(c(51)) %>% 
   table() %>% 
@@ -382,7 +391,11 @@ q.16 %>%
   pander
 ```
 
-```{r Q18}
+## 3.4 CONSTRUCT 3: ATTITUDE TOWARDS AND ENGAGEMENT IN PROFESSIONAL DEVELOPMENT
+
+Nearlly all categories for professiona development were ranked as important for engineering educators (Figure 8). Teaching processes (curriculum development, program improvement), teaching skills and teaching assessment methods were virtually the same, but scholarship was the item that produced the most diversity in responses.  
+
+```{r Q18, fig.cap="Figure 8"}
 survey_data %>% 
   select(c(53:56)) %>% 
   plyr::rename(c(teaching_skills_development = "Teaching Skills Development",
@@ -390,13 +403,14 @@ survey_data %>%
            teaching_processes = "Teaching Processes",
            scholarship = "Scholarhip")) %>% 
   likert %>% 
-  plot %>% 
-  + ggtitle('Perception of the importance of select professional development activites') %>% 
-  + scei.theme %>% 
-  + theme(legend.text= element_text(size=6))
+  plot(wrap=20) %>% 
+  + ggtitle(str_wrap('Perception of the importance of select professional development activites',50)) %>% 
+  + theme(legend.text= element_text(size=9))
 ```
 
-```{r Q19}
+In light of the previous question, participation in professional development activities echoes the ranking of importance. What is surprising is that this trend is reversed in the awarness of support for professional development activites, with the awareness of support for scholarship being the highest rated (68%).
+
+```{r Q19, fig.cap="Figure 9"}
 survey_data %>% 
   select(c(57:60)) %>% 
   plyr::rename(c(support_teaching_skills_development = "Support for Teaching Skills Development",
@@ -404,11 +418,12 @@ survey_data %>%
            support_teaching_processes = "Support for Teaching Processes",
            support_scholarship = "Support for Scholarhip")) %>% 
   likert %>% 
-  plot %>% 
-  + ggtitle('Instructor awarness and participation in professional development activities') %>% 
-  + scei.theme %>% 
-  + theme(legend.text= element_text(size=6))
+  plot(wrap=20) %>% 
+  + ggtitle(str_wrap('Instructor awarness and participation in professional development activities',50)) %>% 
+  + theme(legend.text= element_text(size=9))
 ```
+
+Within the past five years respondent participation in teaching professional development was mainly participation in 1) small 1-2 hour seminars (116 responses), 2) independent learning (112 responses) and 3) 3 hour to full day workshops on teaching (90 responses). 
 
 ```{r Q20}
 q.20 <- survey_data %>% 
@@ -430,14 +445,16 @@ q.20$Activity <- c("Attended a seminar on teaching (1-2 hours of professional de
                   "Internal university funding to support course or program development",
                   "External funding to support course or program development",
                   "Internal university grants supporting educational research",
-                  "External grants supporting educational research)")
+                  "External grants supporting educational research")
 
 set.caption('8: Instructor participation in faculty development activities in the past 5 years') 
 q.20 %>% 
   pander
 ```
 
-```{r Q21}
+The raking of obstacles to participation in professional development activities are illustrated below in figure 10.  The two greatest obstacles indicated by respondents were workload (91%) and the timing of the event (84%).  The two least significant obstacles were the lack of access to funding (47%), and the lack of access to expertise (85%).
+
+```{r Q21, fig.cap="Figure 10"}
 survey_data %>% 
   select(c(71:79)) %>% 
   plyr::rename(c(obs_timing = "Timing of event",
@@ -448,16 +465,16 @@ survey_data %>%
                  obs_workload = "Workload",
                  obs_lack_funding = "Lack of funding opportunities",
                  obs_lack_expertise = "Lack of access to expertise",
-                 obs_specificity = "General vs discipline specific nature of the event")) %>% 
+                 obs_specificity = "Specificity of the event")) %>% 
   likert() %>% 
-  plot %>% 
-  + ggtitle('Instructor perception of obstacles to professional development') %>% 
-  + scei.theme %>% 
-  + theme(legend.text= element_text(size=6))
+  plot(wrap=20) %>% 
+  + ggtitle(str_wrap('Instructor perception of obstacles to professional development',50)) %>% 
+  + theme(legend.text= element_text(size=9))
 ```
 
+Compared to question 20, the responses in this item illustrated that the majority of respondents participation in professional development is skewed towards non-teaching focused activities.  There were 89 responses that responded that 0-40% of their professional development activities in the past 5 years were teaching-focused, which accounts for approximately 54% of the population.
 
-```{r Q22}
+```{r Q22, fig.cap="Figure 11"}
 set.caption('9: Percentage of teaching-focused professional development activities attended in the past five years ') 
 survey_data %>% 
   select(c(80)) %>% 
@@ -467,7 +484,7 @@ survey_data %>%
   pander
 ```
 
-
+Nearly all respondents indicated that professional development as training for new faculty was needed across all areas.  Yet the order of these areas differs from the question 19.  The perception is that new faculty should be provided training in assessment and teaching skills first, with teaching processes and scholarship being of lesser importance.  
 ```{r Q23a}
 survey_data %>% 
   select(c(81:84)) %>% 
@@ -476,12 +493,12 @@ survey_data %>%
                  nf_teaching_processes = "Teaching processes",
                  nf_scholarship = "Scholarship")) %>% 
   likert() %>% 
-  plot %>% 
-  + ggtitle('Instructor perception of needed areas of professional development as training for new faculty') %>% 
-  + scei.theme %>% 
-  + theme(legend.text= element_text(size=6))
+  plot(wrap=20) %>% 
+  + ggtitle(str_wrap('Instructor perception of needed areas of professional development as training for new faculty',50)) %>% 
+  + theme(legend.text= element_text(size=9))
 ```
 
+This trend also held true in the second part of the question pertaining to professional development as continuing education for experienced faculty.  Interestingly, there was a lower level of agreement regarding this question compared to the responses for training for new faculty. 
 ```{r Q23b}
 survey_data %>% 
   select(c(85:88)) %>% 
@@ -490,12 +507,12 @@ survey_data %>%
                  ce_teaching_processes = "Teaching processes",
                  ce_scholarship = "Scholarship")) %>% 
   likert() %>% 
-  plot %>% 
-  + ggtitle('Instructor perception of needed areas of professional development as continuing education for for experienced faculty') %>% 
-  + scei.theme %>% 
-  + theme(legend.text= element_text(size=6))
-
+  plot(wrap=20) %>% 
+  + ggtitle(str_wrap('Instructor perception of needed areas of professional development as continuing education for for experienced faculty',50)) %>% 
+  + theme(legend.text= element_text(size=9))
 ```
+
+Survey respondents were split on whether or not professional development activities were taken into account during annual performance review. The majority (70 responses) indicated that, yes, professional development activities were taken into account.  A large number of respondents were unsure if professional development was used (64) and very few answered that, no, professional development activities were not taken into account.  This highlights the potential need for futher clarification of the benefit and impact of professional development activities beyond the individual.
 
 ```{r Q24}
 set.caption('10: Instructor perception of institutions taking professional development activities into account during annual performance evaluations ') 
@@ -506,3 +523,19 @@ survey_data %>%
   setNames(c("Percentage","Frequency")) %>% 
   pander
 ```
+
+# 4. CONCLUSIONS
+
+The results from this initial sample of responses has highlight some interesting avenues for analysis and future investigation. The initial results were from the scale items alone, and did not include any of the open-response items.  The reason for this was time-based, as qualiative analysis of these responses takes considerable time.
+
+The next steps for the research collaboration are to complete the implementation of the survey at the remaining institutions, and include any additional institutions that have yet to participate.  Once data collection has concluded, a paper is planned to address the development and validation of the instrument along with the report on the complete national dataset. More immediate concerns are the timeline for dissemination of instutional data and the aggregate national dataset, and the long term management, collection and reporting on the data.  
+
+Even in its infancy, this instrument and approach has garnered attention from colleagues outside of engineering and the steering committee has received positive feedback about the impact of this project and its importance.  This highlights a need for the continued use, development and improvement of the instrument, as well as a effort to move the CEEA research collaboration into the next phase.
+
+In the interest of conducting open and collaborative research, nearly all collection, analysis, writing and report generation was done using open-source or readily available technologies.  These include Google Drive, R, RStudio, Github, Atom.  This report was written in rMarkdown in RStudio, typset using Knitr and hosted at Gitub.  You can view this report, the code that created and associated analysis at [http://github.com/jkaupp/R-SCEI](http://github.com/jkaupp/R-SCEI)
+
+# 5. ACKNOWLEDGEMENTS
+
+The steering committe would like to thank the CEEA for its support and assistance in conducting this project.
+
+# References
