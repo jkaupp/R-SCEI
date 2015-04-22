@@ -2,10 +2,8 @@
 bibliography: references.bib
 output:
   html_document:
-    fig_caption:
-    - yes
-  word_document:
-  - default
+    fig_caption: yes
+    theme: readable
 ---
 ```{r setup, echo=FALSE, message=FALSE}
 source("/Users/Jake/ownCloud/Projects/R/Projects/R-SCEI/R/CEEA 2015 Analysis.R")
@@ -26,6 +24,7 @@ opts_chunk$set(echo = FALSE, dev="png", fig.retina = NULL, dpi=150, out.width = 
 *This paper will focus on the the design and development of the SCEI, from framework to final implemented version.  We will describe how the collaboration progressed, providing a narrative and insight into the collaborative research was enacted; highlighting methods and approaches used.  We will also discuss the implementation of the survey, and common issues and challenges encountered.  We will present data, highlight the preliminary findings and discuss the future of the survey and the research collaboration.*
 
 **_Keywords: _** *Collaborative Research, Faculty Attitudes, Survey Design*
+
  * * *
  
 #1. INTRODUCTION
@@ -231,7 +230,7 @@ survey_data %>%
 ```
 
 The majority of the population was in the 7-15 years, with a relatively even distribution in the remaining categories, shown below in table 4. 
-```{r Q2 Table 4, fig.cap="Teaching Experience"}
+```{r Q2_Table_4, fig.cap="Teaching Experience"}
 set.caption('4: Teaching Experience') 
 survey_data %>% 
  count("Teaching Experience"=teaching_duration) %>% 
@@ -240,7 +239,7 @@ survey_data %>%
 
 The majority of the population was focused largely on undergraduate teaching, reporting that teaching occupies approximately 21-60% of faculty work time, illustrated below in table 5.
 
-```{r Q3&4 Table 5, fig.cap="Teaching focus and division of work time"}
+```{r Q3_4_Table_5, fig.cap="Teaching focus and division of work time"}
 u.vs.g <- survey_data %>% 
   count(undergrad_vs_grad) %>% 
   set_names(c('Category','# of Responses:Undergrad vs Graduate Teaching'))
@@ -271,7 +270,7 @@ survey_data %>%
 
 The top teaching goals of survey respondents were transmission of information (76%, ranked by top priority), adopting a learner-centered development of understanding and facilitating construction of meaning (60%).  Nurturing students to reach their personal potential, was third (35%) with a relatively even split.  The lowest priorities were social change through education of the next generation of engineers (73% ranked lowest priority), apprenticeship by socializing students into the practice of engineering (55%).
 
-```{r Q6 Figure 2, fig.cap="Figure 2"}
+```{r Q6_Figure_2, fig.cap="Figure 2"}
 survey_data %>%  
   select(c(11:15)) %>% 
   plyr::rename(c(goals_transmission = "Transmission",
@@ -287,7 +286,7 @@ survey_data %>%
 
 The primary influences of survey respondents to make changes in their teaching are oultined below in figure 3.  Personal obersvation from previous teaching (92%) and course eveluations (63%) were the mostinfluential, with professional development (31%), literature on teaching and learning (29%) and input from colleagues being indicated as being less influential.
 
-```{r Q7 Figure 3, fig.cap="Figure 3"}
+```{r Q7_Figure_3, fig.cap="Figure 3"}
 survey_data %>%  
   select(c(18:22)) %>% 
   plyr::rename(c(changes_personal_observation = "Personal Observation",
@@ -303,7 +302,7 @@ survey_data %>%
 
 Survey respondents indicated that, when they are dissatisfied with student learning in their course, they believe that the top three reasons are: student workload, inadequate learning skills and underprepared or unmotivated students.  There were very few responses that indicated teaching, resources or curriculum as a potential factor. 
 
-```{r Q8 Table 6, fig.cap="Common problems with student learning"}
+```{r Q8_Table_6, fig.cap="Common problems with student learning"}
 q.8 <- survey_data %>% 
   select(c(25:37)) %>% 
   colSums(na.rm=TRUE) %>% 
@@ -327,7 +326,7 @@ q.8 %>%
 
 When asked a series of questions to determine the roles and duties of instructors, survey respondents overwhelmingly indicated that the primary responsibility of an instructor was to motivate students to learn, provide them with a clear explanation of what it is they are expected learn, and provide learning opportunities in which they can deeply engage (61%). The other two categories were a bit difficult to discern, with content knowlegde and articulation and knowledge and application of best teaching practices being more evenly split in rankings, as illustrated below in figure 4.
 
-```{r Q10 Figure 4, fig.cap="Figure 4"}
+```{r Q10_Figure_4, fig.cap="Figure 4"}
 survey_data %>% 
   select(c(39:41)) %>% 
   plyr::rename(c(instructor_teaching_practises = "Know and follow best teaching practices in order to convey to students the important concepts and complex understandings of the content",
@@ -341,7 +340,7 @@ survey_data %>%
 
 Instructor perceptions of student responsibilites in teaching and learning show that the majority of survey respondents agree that the student is responsible for knowledge and motivation (54%), as well as 'doing the work' (48%).  Nearly all respondents indicated that students share the responsibility in teaching and learning, ranking the statement "If the student has the ability to do the work, he or she doesn't really need to take on any added responsibility" last (Figure 5).
 
-```{r Q11 Figure 5, fig.cap="Figure 5"}
+```{r Q11_Figure_5, fig.cap="Figure 5"}
 survey_data %>% 
   select(c(42:44)) %>% 
   plyr::rename(c(student_ability_no_responsbility = "If the student has the ability to do the work, he or she doesn't really need to take on any added responsibility",
@@ -355,7 +354,7 @@ survey_data %>%
 
 Interestingly, instructor perceptions of how to positively influence student success identify a teacher focused theme, illustrated in figure 6.  Effective presentation, classroom management and engaging learning opportunities was ranked as most important (56%), with the other two choices of content mastery and clear articulation adnd teaching and assessment methods supporting outcomes being virtually indistinguishable.
 
-```{r Q12 Figure 6, fig.cap="Figure 6"}
+```{r Q12_Figure_6, fig.cap="Figure 6"}
 survey_data %>% 
   select(c(45:47)) %>% 
   plyr::rename(c(methods_supporting_outcomes = "Use teaching and assessment methods that support clearly stated learning outcomes",
@@ -369,7 +368,7 @@ survey_data %>%
 
 Nearly all respondents identified themselves as both a knowledge and teaching expert in their area of specialization (Figure 7).
 
-```{r Q14&15,fig.cap="Figure 7"}
+```{r Q14_15_Figure_7,fig.cap="Figure 7"}
 survey_data %>% 
   select(c(49:50)) %>% 
   plyr::rename(c(knowledge_expert = "I think of myself as a knowledge expert in my area of specialization",
@@ -382,7 +381,7 @@ survey_data %>%
 
 Nearly all respondents responded that they primarily use student course and teaching evaluations to improve delivery (68 responses).  Other uses of student evaluations were spread relatively equal across other categories, with only a very small minority (4 responses) not reviewing course evaluations.
 
-```{r Q16, fig.cap="Table 7"}
+```{r Q16_Table_7, fig.cap="Table 7"}
 q.16 <- survey_data %>% 
   select(c(51)) %>% 
   table() %>% 
@@ -398,7 +397,7 @@ q.16 %>%
 
 Nearlly all categories for professiona development were ranked as important for engineering educators (Figure 8). Teaching processes (curriculum development, program improvement), teaching skills and teaching assessment methods were virtually the same, but scholarship was the item that produced the most diversity in responses.  
 
-```{r Q18, fig.cap="Figure 8"}
+```{r Q18_Figure_8, fig.cap="Figure 8"}
 survey_data %>% 
   select(c(53:56)) %>% 
   plyr::rename(c(teaching_skills_development = "Teaching Skills Development",
@@ -413,7 +412,7 @@ survey_data %>%
 
 In light of the previous question, participation in professional development activities echoes the ranking of importance. What is surprising is that this trend is reversed in the awarness of support for professional development activites, with the awareness of support for scholarship being the highest rated (68%).
 
-```{r Q19, fig.cap="Figure 9"}
+```{r Q19_Figure_9, fig.cap="Figure 9"}
 survey_data %>% 
   select(c(57:60)) %>% 
   plyr::rename(c(support_teaching_skills_development = "Support for Teaching Skills Development",
@@ -428,7 +427,7 @@ survey_data %>%
 
 Within the past five years respondent participation in teaching professional development was mainly participation in 1) small 1-2 hour seminars (116 responses), 2) independent learning (112 responses) and 3) 3 hour to full day workshops on teaching (90 responses). 
 
-```{r Q20}
+```{r Q20_Table_8}
 q.20 <- survey_data %>% 
   select(c(61:70)) %>% 
   colSums(na.rm = TRUE) %>% 
@@ -457,7 +456,7 @@ q.20 %>%
 
 The raking of obstacles to participation in professional development activities are illustrated below in figure 10.  The two greatest obstacles indicated by respondents were workload (91%) and the timing of the event (84%).  The two least significant obstacles were the lack of access to funding (47%), and the lack of access to expertise (85%).
 
-```{r Q21, fig.cap="Figure 10"}
+```{r Q21_Figure_10, fig.cap="Figure 10"}
 survey_data %>% 
   select(c(71:79)) %>% 
   plyr::rename(c(obs_timing = "Timing of event",
@@ -477,7 +476,7 @@ survey_data %>%
 
 Compared to question 20, the responses in this item illustrated that the majority of respondents participation in professional development is skewed towards non-teaching focused activities.  There were 89 responses that responded that 0-40% of their professional development activities in the past 5 years were teaching-focused, which accounts for approximately 54% of the population.
 
-```{r Q22, fig.cap="Figure 11"}
+```{r Q22_Figure_11, fig.cap="Figure 11"}
 set.caption('9: Percentage of teaching-focused professional development activities attended in the past five years ') 
 survey_data %>% 
   select(c(80)) %>% 
@@ -488,7 +487,7 @@ survey_data %>%
 ```
 
 Nearly all respondents indicated that professional development as training for new faculty was needed across all areas.  Yet the order of these areas differs from the question 19.  The perception is that new faculty should be provided training in assessment and teaching skills first, with teaching processes and scholarship being of lesser importance.  
-```{r Q23a}
+```{r Q23a_Figure_12, fig.cap="Figure 12"}
 survey_data %>% 
   select(c(81:84)) %>% 
   plyr::rename(c(nf_teaching_skills = "Teaching skills development",
@@ -502,7 +501,7 @@ survey_data %>%
 ```
 
 This trend also held true in the second part of the question pertaining to professional development as continuing education for experienced faculty.  Interestingly, there was a lower level of agreement regarding this question compared to the responses for training for new faculty. 
-```{r Q23b}
+```{r Q23b_Figure_13, fig.cap="Figure 13"}
 survey_data %>% 
   select(c(85:88)) %>% 
   plyr::rename(c(ce_teaching_skills = "Teaching skills development",
@@ -517,7 +516,7 @@ survey_data %>%
 
 Survey respondents were split on whether or not professional development activities were taken into account during annual performance review. The majority (70 responses) indicated that, yes, professional development activities were taken into account.  A large number of respondents were unsure if professional development was used (64) and very few answered that, no, professional development activities were not taken into account.  This highlights the potential need for futher clarification of the benefit and impact of professional development activities beyond the individual.
 
-```{r Q24}
+```{r Q24_Table_10}
 set.caption('10: Instructor perception of institutions taking professional development activities into account during annual performance evaluations ') 
 survey_data %>% 
   select(c(89)) %>% 
