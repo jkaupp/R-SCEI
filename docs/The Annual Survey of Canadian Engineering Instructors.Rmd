@@ -3,10 +3,11 @@ bibliography: references.bib
 output:
   html_document:
     fig_caption: yes
+    theme: readable
 ---
 ```{r setup, echo=FALSE, message=FALSE}
 source("/Users/Jake/ownCloud/Projects/R/Projects/R-SCEI/R/CEEA 2015 Analysis.R")
-opts_chunk$set(echo = FALSE, dev="svg", fig.retina = NULL, dpi=150, out.width = "500px", fig.align = "center")
+opts_chunk$set(echo = FALSE, dev="png", fig.retina = NULL, dpi=150, out.width = "800px", fig.align = "center")
 ```
 
 #The Canadian Engineering Education Association Research Collaboration (CEEA-RC): Annual Survey of Canadian Engineering Instructors
@@ -23,6 +24,7 @@ opts_chunk$set(echo = FALSE, dev="svg", fig.retina = NULL, dpi=150, out.width = 
 *This paper will focus on the the design and development of the SCEI, from framework to final implemented version.  We will describe how the collaboration progressed, providing a narrative and insight into the collaborative research was enacted; highlighting methods and approaches used.  We will also discuss the implementation of the survey, and common issues and challenges encountered.  We will present data, highlight the preliminary findings and discuss the future of the survey and the research collaboration.*
 
 **_Keywords: _** *Collaborative Research, Faculty Attitudes, Survey Design*
+ 
  * * *
  
 #1. INTRODUCTION
@@ -134,19 +136,18 @@ These construct focuses on identifying what  resources are available to  instruc
 
 **Framework:**  Construct 3 is based on a conceptual framework for professional development adapted by one by Amundsen et al. (2005) that categorizes four main focal areas in faculty development: skills focus, method focus, process focus, and discipline focus[@Amundsen:2005wb].  The Amundsen framework was adapted for a disciplinary focus to the following framework for professional development activities. 
 
-| Categories                                                                      | Disciplinary Focus                                                                                                                                                                                                                                                                                                                                                           | Multidisciplinary Focus                                                                                                                                                                                                                                                                         |
+| Categories | Disciplinary Focus | Multidisciplinary Focus |
 |---------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Skills (presentations, discussion facilitation, learning technology)            | Training on using engineering hardware/software in courses.  Personal reading on using engineering hardware/software in courses.                                                                                                                                                                                                                                             | Training on using general educational software/hardware (learning management systems, clickers, etc.)  Personal reading on general education hardware/software in courses (learning management systems, clickers, etc.)  Training on organization, presentations, writing on a blackboard, etc. |
-| Teaching methods (project-based learning, case studies, active learning, etc.)  | Workshops/training on teaching methods specific to engineering (education sessions at disciplinary conferences, workshops on teaching design, engineering labs, etc.)  Personal reading on teaching methods specific to engineering (education sessions at disciplinary conferences, workshops on teaching design, engineering labs, etc.)                                   | Workshops/training on general teaching methods (active learning, service learning, collaborative learning, etc.)  Personal reading on general teaching methods (active learning, service learning, collaborative learning, etc.)                                                                |
-| Processes and critical analysis                                                 | Workshops/sessions on teaching and learning processes specific to engineering (course redevelopment workshops, curriculum design, assessment, graduate attributes)  Facilitated sessions on working collaboratively as an engineering department on curriculum design, assessment, etc.  Broad informal holistic discussions on teaching and learning issues with colleagues | Workshop/session on general teaching and learning processes (constructive alignment, curriculum design, assessment, etc.) Facilitated sessions on curriculum design, assessment, learning science, etc.                                                                                         |
-| Personal scholarship                                                            | Presenting and seeking feedback to engineering colleagues on teaching and learning innovations  Scholarly work related to engineering education                                                                                                                                                                                                                              |                                                                                                                                                                                                                                                                                                 |
+| Skills (presentations, discussion facilitation, learning technology) | Training on using engineering hardware/software in courses.  Personal reading on using engineering hardware/software in courses. | Training on using general educational software/hardware (learning management systems, clickers, etc.)  Personal reading on general education hardware/software in courses (learning management systems, clickers, etc.)  Training on organization, presentations, writing on a blackboard, etc. |
+| Teaching methods (project-based learning, case studies, active learning, etc.)  | Workshops/training on teaching methods specific to engineering (education sessions at disciplinary conferences, workshops on teaching design, engineering labs, etc.)  Personal reading on teaching methods specific to engineering (education sessions at disciplinary conferences, workshops on teaching design, engineering labs, etc.) | Workshops/training on general teaching methods (active learning, service learning, collaborative learning, etc.)  Personal reading on general teaching methods (active learning, service learning, collaborative learning, etc.) |
+| Processes and critical analysis | Workshops/sessions on teaching and learning processes specific to engineering (course redevelopment workshops, curriculum design, assessment, graduate attributes)  Facilitated sessions on working collaboratively as an engineering department on curriculum design, assessment, etc.  Broad informal holistic discussions on teaching and learning issues with colleagues | Workshop/session on general teaching and learning processes (constructive alignment, curriculum design, assessment, etc.) Facilitated sessions on curriculum design, assessment, learning science, etc. |
+| Personal scholarship | Presenting and seeking feedback to engineering colleagues on teaching and learning innovations  Scholarly work related to engineering education | Presenting to and seeking feedback from a range of disciplines Scholarly work related to teaching and learning |
 
 ##2.3 Phase 3
 
-
 ###2.3.1 DRAFT SURVEY
 
-Once the frameworks were finalized, each working group created draft items for their respective construct.  These items were then reviewed by the steering committee alongside educational experts in survey creation.  The intent of the internal review was the streamline the draft survey prior to presenting it to collaborators at the CEEA 2014 meeting. This resulted in the removal and merging items, reallocating items to another construct, or outright removal of items that were deemed unnecessary.   The survey was then created in a web-based platform, FluidSurveys, as this was the survey platform used by the host institution, Queen’s University.   This draft survey was packaged with a brief synopsis of the research collaboration thus far (Goals, Development, Research Questions and Frameworks) and was presented to collaborators at the 2014 annual meeting.  It was at this point that the instrument was named the "Survey of Canadian Engineering Instructors" or SCEI.
+Once the frameworks were finalized, each working group created draft items for their respective construct.  These items were then reviewed by the steering committee alongside educational experts in survey creation.  The intent of the internal review was the streamline the draft survey prior to presenting it to collaborators at the CEEA 2014 meeting. This resulted in the removal and merging items, reallocating items to another construct, or outright removal of items that were deemed unnecessary.  The survey was then created in a web-based platform, FluidSurveys, as this was the survey platform used by the host institution, Queen’s University.  This draft survey was packaged with a brief synopsis of the research collaboration thus far (Goals, Development, Research Questions and Frameworks) and was presented to collaborators at the 2014 annual meeting.  It was at this point that the instrument was named the "Survey of Canadian Engineering Instructors" or SCEI.
 
 ###2.2.2 ETHICS APPROVAL
 
@@ -212,14 +213,14 @@ Out of 22 institutions that expressed interest in the research collaboration, on
 
 The distribution of instructor classification, shown below in table 2, illustrates that respondents were mostly classified as a traditional professor.  Those who responded "other", show a mix of emeritus professors, adminstrators and specialized staff shown in table 3.
 
-```{r Q1 Table 2, fig.cap="Instructor Academic Title"}
+```{r Q1_Table_2, fig.cap="Instructor Academic Title"}
 set.caption('2: Distribution of Instructor Classification') 
 survey_data %>% 
   count("Academic Title"=position) %>% 
   pander
 ```
 
-```{r Q1b Table 3, fig.cap="Other Instructor Roles"}
+```{r Q1b_Table_3, fig.cap="Other Instructor Roles"}
 set.caption('3: Other Roles') 
 survey_data %>% 
   count("Academic Title"=position_other) %>%
@@ -228,7 +229,7 @@ survey_data %>%
 ```
 
 The majority of the population was in the 7-15 years, with a relatively even distribution in the remaining categories, shown below in table 4. 
-```{r Q2 Table 4, fig.cap="Teaching Experience"}
+```{r Q2_Table_4, fig.cap="Teaching Experience"}
 set.caption('4: Teaching Experience') 
 survey_data %>% 
  count("Teaching Experience"=teaching_duration) %>% 
@@ -237,7 +238,7 @@ survey_data %>%
 
 The majority of the population was focused largely on undergraduate teaching, reporting that teaching occupies approximately 21-60% of faculty work time, illustrated below in table 5.
 
-```{r Q3&4 Table 5, fig.cap="Teaching focus and division of work time"}
+```{r Q3_4_Table_5, fig.cap="Teaching focus and division of work time"}
 u.vs.g <- survey_data %>% 
   count(undergrad_vs_grad) %>% 
   set_names(c('Category','# of Responses:Undergrad vs Graduate Teaching'))
@@ -256,7 +257,7 @@ inner_join(u.vs.g,avg.t.time,by='Category') %>%
 
 The majority of survey respondents would classify themselves as enjoying teaching to a great or fairly great extent, as illustrated in figure 1 below.
 
-```{r Q5 Figure 1, fig.cap="Figure 1"}
+```{r Q5_Figure_1, fig.cap="Figure 1"}
 survey_data %>% 
   select(c(10)) %>% 
   plyr::rename(c(enjoyment = paste("Extent of enjoyment"))) %>% 
