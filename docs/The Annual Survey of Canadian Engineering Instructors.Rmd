@@ -331,7 +331,7 @@ survey_data %>%
   select(c(39:41)) %>% 
   plyr::rename(c(instructor_teaching_practises = "Know and follow best teaching practices in order to convey to students the important concepts and complex understandings of the content",
            instructor_content = "Know the content well and be able to clearly articulate it",
-           instructor_motivate_and_provide = "Motivate students to learn, provide a clear explanation of what they are expected learn, and provide learning opportunities in which they can deeply engage")) %>% 
+           instructor_motivate_and_provide = "Motivate students to learn, provide clear expectations of learning, and provide engaging learning opportunities")) %>% 
   likert() %>% 
   plot(wrap=20) %>% 
   + ggtitle(str_wrap('Perception of instructor responsibility in the teaching and learning process',50)) %>% 
