@@ -5,7 +5,7 @@ The project repository for the development and implementation of the first CEEA 
 
 # Publications
 
-[CEEA 2014 Conference Proceeding: The Canadian Engineering Education Association Research Collaboration (CEEA-RC) National Survey](https://jkaupp.github.io/R-SCEI/)
+[CEEA 2014 Conference Proceeding: The Canadian Engineering Education Association Research Collaboration (CEEA-RC) National Survey](https://jkaupp.github.io/SCEI/)
 
 
 
